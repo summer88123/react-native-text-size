@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { TurboModule } from "rnoh/ts";
+import { TurboModule } from "@rnoh/react-native-openharmony/ts";
 import font from '@ohos.font'
 import measure, { MeasureOptions } from '@ohos.measure'
 import { config } from './config';

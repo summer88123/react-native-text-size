@@ -3,11 +3,11 @@
   "devDependencies": {
   },
   "author": "",
-  "name": "rnoh-text-size",
+  "name": "@react-native-oh-tpl/react-native-text-size",
   "description": "Please describe the basic information.",
   "main": "index.ets",
-  "version": "1.0.0",
+  "version": "4.0.0-0.0.4",
   "dependencies": {
-    "rnoh": "file:../rnoh"
+    "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
   }
 }
