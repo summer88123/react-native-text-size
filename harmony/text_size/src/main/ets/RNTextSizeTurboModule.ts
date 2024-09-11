@@ -25,20 +25,23 @@
 import { TurboModule } from "@rnoh/react-native-openharmony/ts";
 import font from '@ohos.font'
 import measure, { MeasureOptions } from '@ohos.measure'
-import { config } from './config';
+import { config } from './Config';
 import display from '@ohos.display';
 
 export class RNTextSizeTurboModule extends TurboModule {
   measure(options: TSMeasureParams): Promise<TSMeasureResult> {
     return new Promise<TSMeasureResult>((resolve, reject) => {
       try {
-        let text = options.text;
-        let width = options.width;
-        let lineCount = options.lineInfoForLine
+        let lineCount = options.lineInfoForLine || 0;
         let measureText: MeasureOptions = {
-          textContent: text,
+          textContent: options.text,
+          fontFamily: options.fontFamily,
+          fontSize: options.fontSize,
+          fontWeight: options.fontWeight,
+          letterSpacing: options.letterSpacing,
         }
         let textSize = config(measureText);
+        let width: number = textSize.width as number;
         let height: number = textSize.height as number;
         let result: TSMeasureResult = {
           width: width,
@@ -61,6 +64,10 @@ export class RNTextSizeTurboModule extends TurboModule {
         fontHeight = text.reduce<number[]>((prev, value) => {
           let measureText: MeasureOptions = {
             textContent: value,
+            fontFamily: options.fontFamily,
+            fontSize: options.fontSize,
+            fontWeight: options.fontWeight,
+            letterSpacing: options.letterSpacing,
           }
           let textSize = config(measureText);
           let height: number = textSize.height as number;
