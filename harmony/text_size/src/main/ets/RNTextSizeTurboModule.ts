@@ -25,7 +25,7 @@
 import { TurboModule } from "@rnoh/react-native-openharmony/ts";
 import font from '@ohos.font'
 import measure, { MeasureOptions } from '@ohos.measure'
-import { config } from './Config';
+import { config,measureTextParagraph } from './Config';
 import display from '@ohos.display';
 
 export class RNTextSizeTurboModule extends TurboModule {
@@ -43,10 +43,15 @@ export class RNTextSizeTurboModule extends TurboModule {
         let textSize = config(measureText);
         let width: number = textSize.width as number;
         let height: number = textSize.height as number;
+        let measureResult = measureTextParagraph(measureText,options.width);
+
         let result: TSMeasureResult = {
           width: width,
           height: height,
-          lineCount: lineCount,
+          lineCount: measureResult.lines,
+        }
+        if (options.usePreciseWidth) {
+          result.lastLineWidth = measureResult.lastLineWidth;
         }
         resolve(result);
       } catch (e) {
