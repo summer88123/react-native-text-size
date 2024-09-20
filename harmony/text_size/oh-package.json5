@@ -6,7 +6,7 @@
   "name": "@react-native-oh-tpl/react-native-text-size",
   "description": "Please describe the basic information.",
   "main": "index.ets",
-  "version": "4.0.0-0.0.7",
+  "version": "4.0.0-0.0.8",
   "dependencies": {
     "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
   }
