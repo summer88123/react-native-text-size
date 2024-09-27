@@ -51,10 +51,6 @@
     "!**/__fixtures__",
     "!**/__mocks__"
   ],
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
   "codegenConfig": {
     "name": "RN_TextSizeSpec",
     "type": "modules",
