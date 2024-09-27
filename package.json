@@ -13,8 +13,6 @@
     "prepare": "npm run bob"
   },
   "dependencies": {
-    "react": "*",
-    "react-native": "*",
     "react-native-prompt-android": "^1.1.0"
   },
   "devDependencies": {
@@ -34,6 +32,10 @@
     "react-native-builder-bob": "^0.20.4",
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   },
   "engines": {
     "node": ">=18"
